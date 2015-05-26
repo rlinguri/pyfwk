@@ -6,6 +6,7 @@
 import os
 from object import *
 from ..struc.dbrow import *
+from ..utils.filemanager import *
 
 
 # ---------------------ABSTRACT-BASE-CLASS-DATA-MODEL---------------------#
@@ -62,8 +63,8 @@ class Model(Object):
         self.dbase.execute(sql)
 
     def importCSV(self):
-        fms = FileManager.default(FileManager())
-        pth = os.path.join(fms.csvDir(), '{}.csv'.format(self.table))
+        fms = FileManager.instance(FileManager())
+        pth = os.path.join(fms.csv_dir(), '{}.csv'.format(self.table))
         fil = open(pth, 'r')
         for line in fil.readlines():
             lst = line.rstrip().split(',')
