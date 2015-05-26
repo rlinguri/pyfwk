@@ -15,12 +15,10 @@ setup(name='pyfwk',
       author='Roderic Linguri',
       author_email='rlinguri@mac.com',
       license='MIT',
-      packages=['pyfwk'],
-      py_modules=['base', 'struc', 'utils'],
-      long_description=read('README.md'),
+      packages=['pyfwk','pyfwk.base','pyfwk.struc','pyfwk.utils'],
       classifiers=[
           "Development Status :: 3 - Alpha",
           "Topic :: Office/Business :: Financial",
           "License :: OSI Approved :: MIT License"
-      ],
+      ]
       )
