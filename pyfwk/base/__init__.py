@@ -2,6 +2,3 @@
 
 __module__ = 'base'
 __author__ = 'Roderic Linguri'
-
-
-

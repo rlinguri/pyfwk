@@ -2,6 +2,3 @@
 
 __module__ = 'utils'
 __author__ = 'Roderic Linguri'
-
-
-

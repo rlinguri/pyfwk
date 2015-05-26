@@ -2,6 +2,3 @@
 
 __package__ = 'pyfwk'
 __author__ = 'Roderic Linguri'
-
-
-
