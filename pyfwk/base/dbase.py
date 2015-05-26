@@ -29,6 +29,7 @@ class DBase:
         self.curs.execute(sql, args)
         return self.curs.fetchall()
 
+
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['DBase']
 

@@ -7,7 +7,7 @@
 from dbcol import *
 
 
-# ----------------------------DATABASE-COLUMN-----------------------------#
+# -----------------------------DATABASE-ROW-------------------------------#
 class DBRow:
     @staticmethod
     def dict(columns, values):
