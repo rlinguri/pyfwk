@@ -24,6 +24,11 @@ class Model(Object):
         else:
             return None
 
+    def getRecFromEntityId(self, entity_id):
+        sql = 'SELECT * FROM "{}" WHERE entity = ?'.format(self.table)
+        values = self.dbase.fetchRec(sql, entity_id)
+        return DBRow.dict(self.columns, values)
+
     def getRecFromSymbol(self, symbol):
         sql = 'SELECT * FROM "{}" WHERE symbol = ?'.format(self.table)
         values = self.dbase.fetchRec(sql, symbol)
