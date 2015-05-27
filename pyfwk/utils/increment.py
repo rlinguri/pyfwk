@@ -17,9 +17,13 @@ class Increment:
 
     def __init__(self, module):
         """ sets the path to the increment file based on module """
-        fms = FileManager.instance(FileManager())
+        fms = FileManager.instance()
         self.pdir = fms.inc_dir()
         self.file = os.path.join(self.pdir, '{}.txt'.format(module))
+        if not os.path.exists(self.file):
+            with open(self.file, "w") as f:
+                f.write('1000')
+                f.close()
 
     def current(self):
         """ return the current value without incrementing """
@@ -36,6 +40,12 @@ class Increment:
         f.write(str(c + 1))
         f.close()
         return c
+
+    def reset(self):
+        f = open(self.file, 'r+')
+        f.seek(0)
+        f.write('1000')
+        f.close()
 
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['Increment']
