@@ -17,13 +17,16 @@ class FileManager:
     """
 
     @staticmethod
-    def instance(self, *args):
-        if (self.fms is None):
-            self.fms = FileManager(args)
-        return self.fms
+    def instance():
+        if not FileManager.fms:
+            FileManager.fms = FileManager()
+        return FileManager.fms
 
-    def __init__(self, root):
-        self.root = root
+    def __init__(self):
+        pass
+
+    def set_root(self, arg):
+        self.fms.root = arg
 
     def root_dir(self):
         return self.root
@@ -64,8 +67,7 @@ __all__ = ['FileManager']
 
 # ----------------------------------MAIN----------------------------------#
 def main():
-    fms = FileManager.instance(FileManager(os.path.dirname(__file__)))
-    print fms.root_dir()
+    pass
 
 
 if __name__ == '__main__':
