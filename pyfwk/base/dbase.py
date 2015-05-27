@@ -12,6 +12,7 @@ class DBase:
       Vars curs and conn should be declared in extended class
       Values for both should be set at extended class __init__
     """
+
     def execute(self, sql, *args):
         self.curs.execute(sql, args)
         self.conn.commit()
@@ -28,7 +29,6 @@ class DBase:
     def fetchrecs(self, sql, *args):
         self.curs.execute(sql, args)
         return self.curs.fetchall()
-
 
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['DBase']

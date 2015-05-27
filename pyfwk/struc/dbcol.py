@@ -14,7 +14,6 @@ class DBCol:
         self.name = name
         self.datatype = datatype
 
-
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['DBCol']
 
