@@ -18,7 +18,7 @@ class Model(Object):
 
     def getRecFromId(self, id):
         sql = 'SELECT * FROM "{}" WHERE id = ?'.format(self.table)
-        values = self.dbase.fetchRec(sql, id)
+        values = self.dbase.fetchrec(sql, id)
         if (values is not None):
             return DBRow.dict(self.columns, values)
         else:
@@ -26,18 +26,18 @@ class Model(Object):
 
     def getRecFromEntityId(self, entity_id):
         sql = 'SELECT * FROM "{}" WHERE entity = ?'.format(self.table)
-        values = self.dbase.fetchRec(sql, entity_id)
+        values = self.dbase.fetchrec(sql, entity_id)
         return DBRow.dict(self.columns, values)
 
     def getRecFromSymbol(self, symbol):
         sql = 'SELECT * FROM "{}" WHERE symbol = ?'.format(self.table)
-        values = self.dbase.fetchRec(sql, symbol)
+        values = self.dbase.fetchrec(sql, symbol)
         return DBRow.dict(self.columns, values)
 
     def getRecsFromSymbol(self, symbol):
         lst = []
         sql = 'SELECT * FROM "{}" WHERE symbol = ?'.format(self.table)
-        for values in self.dbase.fetchRecs(sql, symbol):
+        for values in self.dbase.fetchrecs(sql, symbol):
             row = DBRow.dict(self.columns, values)
             lst.append(row)
         return lst
@@ -45,7 +45,7 @@ class Model(Object):
     def getAllRecs(self):
         lst = []
         sql = 'SELECT * FROM "{}"'.format(self.table)
-        for values in self.dbase.fetchRecs(sql):
+        for values in self.dbase.fetchrecs(sql):
             row = DBRow.dict(self.columns, values)
             lst.append(row)
         return lst
