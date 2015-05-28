@@ -5,6 +5,7 @@
 """
 
 import os
+import urllib2
 
 # --------------------------FILE-MANAGER-UTILITY--------------------------#
 class FileManager:
@@ -60,6 +61,18 @@ class FileManager:
         if not os.path.exists(par):
             os.makedirs(par)
         return par
+
+    def get_csv(self,module):
+        if not os._exists(os.path.join(self.csv_dir(),"{}.csv".format(module))):
+            url = urllib2.urlopen('http://www.pyfiapp.com/src/csv/{}.csv'.format(module))
+            if url.getcode() == 200:
+                src = url.read()
+                dst = open(os.path.join(self.csv_dir(),"{}.csv".format(module)),"w+")
+                dst.write(src)
+                return 0
+            else:
+                raise ValueError('The required support file {} in etc/csv was not found'.format(module))
+
 
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['FileManager']
