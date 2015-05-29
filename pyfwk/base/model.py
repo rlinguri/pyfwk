@@ -29,6 +29,14 @@ class Model(Object):
         values = self.dbase.fetch_rec(sql, entity_id)
         return DBRow.dict(self.columns, values)
 
+    def get_recs_from_endity_id(self, symbol):
+        lst = []
+        sql = 'SELECT * FROM "{}" WHERE entity = ?'.format(self.table)
+        for values in self.dbase.fetch_recs(sql, symbol):
+            row = DBRow.dict(self.columns, values)
+            lst.append(row)
+        return lst
+
     def get_rec_from_symbol(self, symbol):
         sql = 'SELECT * FROM "{}" WHERE symbol = ?'.format(self.table)
         values = self.dbase.fetch_rec(sql, symbol)
