@@ -22,13 +22,21 @@ class DBase:
         self.conn.commit()
         return self.curs.lastrowid
 
-    def fetchrec(self, sql, *args):
+    def fetch_rec(self, sql, *args):
         self.curs.execute(sql, args)
         return self.curs.fetchone()
 
-    def fetchrecs(self, sql, *args):
+    def fetch_recs(self, sql, *args):
         self.curs.execute(sql, args)
         return self.curs.fetchall()
+
+    def table_exists(self,table_name):
+        sql = 'SELECT name FROM sqlite_master WHERE type = "table" AND name = "{}";'.format(table_name)
+        res = self.fetch_rec(sql)
+        if (res is not None):
+            return True
+        else:
+            return False
 
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['DBase']

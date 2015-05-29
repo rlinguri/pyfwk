@@ -9,7 +9,7 @@ def read(fname):
 
 
 setup(name='pyfwk',
-      version='0.0.9',
+      version='0.0.11',
       description='Python Framework for MVC Applications',
       url='http://pyfwk.com',
       author='Roderic Linguri',

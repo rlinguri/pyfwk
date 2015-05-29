@@ -63,7 +63,7 @@ class FileManager:
         return par
 
     def get_csv(self,module):
-        if not os._exists(os.path.join(self.csv_dir(),"{}.csv".format(module))):
+        if not os.path.exists(os.path.join(self.csv_dir(),"{}.csv".format(module))):
             url = urllib2.urlopen('http://www.pyfiapp.com/src/csv/{}.csv'.format(module))
             if url.getcode() == 200:
                 src = url.read()
