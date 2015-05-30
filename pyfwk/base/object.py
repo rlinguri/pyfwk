@@ -20,6 +20,8 @@ class Object:
             obj = odc[key]
             if (isinstance(obj, unicode)):
                 dct[key] = obj
+            elif (isinstance(obj, str)):
+                dct[key] = obj
             elif (isinstance(obj, int)):
                 dct[key] = str(obj)
             else:
