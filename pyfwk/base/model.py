@@ -96,9 +96,6 @@ class Model(Object):
             if fm.get_csv(self.table) is not None:
                 self.create_table()
                 self.import_csv()
-                self.create_index('type')
-                self.create_index('exchange')
-                self.create_index('profile')
 
 # ---------------------------------EXPORT---------------------------------#
 __all__ = ['Model']
