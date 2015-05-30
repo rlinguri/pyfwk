@@ -68,7 +68,7 @@ class Model(Object):
                 sql += ', '
             i += 1
         sql += ');'
-        print sql
+        # print sql
         self.dbase.execute(sql)
 
     def drop_table(self):
@@ -83,7 +83,7 @@ class Model(Object):
             lst = line.rstrip().split(',')
             sql = DBRow.sqlForRowInsert(self.table, self.columns, lst)
             self.dbase.execute(sql)
-            print sql
+            # print sql
 
     def create_index(self, column):
         idx = column[0]
