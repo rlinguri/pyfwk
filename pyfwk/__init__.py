@@ -7,5 +7,5 @@ from base import *
 from struc import *
 from utils import *
 
-__all__ = ['DBase', 'Model', 'Object', 'DBCol', 'DBRow', 'FileManager', 'Increment']
+__all__ = ['DBase', 'Model', 'Object', 'DBCol', 'DBRow', 'FileManager', 'Increment', 'Currency']
 

@@ -5,5 +5,6 @@ __author__ = 'Roderic Linguri'
 
 from filemanager import *
 from increment import *
+from currency import *
 
-__all__ = ['FileManager', 'Increment']
+__all__ = ['FileManager', 'Increment','Currency']
